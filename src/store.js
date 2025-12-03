@@ -1,11 +1,10 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 
-// Helper to get distinct groups from stagiaires
 const distinctGroups = (stagiaires) => {
     return Array.from(new Set(stagiaires.map(s => s.groupe))).sort();
 };
 
-// Initial data for stagiaires
+
 const initialStagiaires = [
     { cef: 'CEF001', nom: 'Dupont', prenom: 'Alice', groupe: 'G1', noteDiscipline: 20 },
     { cef: 'CEF002', nom: 'Martin', prenom: 'Bob', groupe: 'G1', noteDiscipline: 20 },
@@ -14,7 +13,6 @@ const initialStagiaires = [
     { cef: 'CEF005', nom: 'Smith', prenom: 'Eva', groupe: 'G3', noteDiscipline: 20 }
 ];
 
-// =================== stagiaireSlice ===================
 const stagiaireSlice = createSlice({
     name: 'stagiaires',
     initialState: {
@@ -35,7 +33,6 @@ const stagiaireSlice = createSlice({
     }
 });
 
-// =================== absenceSlice ===================
 const absenceSlice = createSlice({
     name: 'absences',
     initialState: {
@@ -45,15 +42,18 @@ const absenceSlice = createSlice({
         filterGroupe: 'ALL'
     },
     reducers: {
-        addAbsence(state, action) {
-            const { cef, groupe, date } = action.payload;
-            const id = `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`;
-            state.list.push({ id, cef, groupe, date });
+        addAbsence(state, { payload }) {
+            state.list.push({
+                id: crypto.randomUUID(),
+                ...payload
+            });
         },
-        setFilterGroupeAbs(state, action) {
-            state.filterGroupe = action.payload;
+
+        setFilterGroupeAbs(state, { payload }) {
+            state.filterGroupe = payload;
         }
     }
+
 });
 
 const store = configureStore({
