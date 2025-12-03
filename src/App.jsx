@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Stagiaires from './components/Stagiaires';
 import Absences from './components/Absences';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './medieval.css';
 
 function App() {
   return (

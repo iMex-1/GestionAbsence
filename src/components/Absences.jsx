@@ -22,12 +22,12 @@ function Absences() {
 
     return (
         <div className="container">
-            <h2>Liste des absences</h2>
+            <h2>Absence Chronicles</h2>
             <div className="mb-3 row">
-                <label className="col-sm-2 col-form-label">Filtrer par groupe</label>
+                <label className="col-sm-2 col-form-label">Filter by Guild</label>
                 <div className="col-sm-4">
                     <select className="form-select" value={filter} onChange={onSelectGroup}>
-                        <option value="ALL">Tous</option>
+                        <option value="ALL">All Guilds</option>
                         {groupes.map(g => <option key={g} value={g}>{g}</option>)}
                     </select>
                 </div>
@@ -37,9 +37,9 @@ function Absences() {
                 <thead>
                     <tr>
                         <th>Date</th>
-                        <th>CEF</th>
-                        <th>Stagiaire</th>
-                        <th>Groupe</th>
+                        <th>Scroll ID</th>
+                        <th>Apprentice</th>
+                        <th>Guild</th>
                     </tr>
                 </thead>
                 <tbody>

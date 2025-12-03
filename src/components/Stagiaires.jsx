@@ -35,12 +35,12 @@ function Stagiaires() {
 
     return (
         <div className="container">
-            <h2>Liste des stagiaires</h2>
+            <h2>Guild Apprentices Registry</h2>
             <div className="mb-3 row">
-                <label className="col-sm-2 col-form-label">Filtrer par groupe</label>
+                <label className="col-sm-2 col-form-label">Filter by Guild</label>
                 <div className="col-sm-4">
                     <select className="form-select" value={filter} onChange={onSelectGroup}>
-                        <option value="ALL">Tous</option>
+                        <option value="ALL">All Guilds</option>
                         {groupes.map(g => <option key={g} value={g}>{g}</option>)}
                     </select>
                 </div>
@@ -49,13 +49,13 @@ function Stagiaires() {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th>CEF</th>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Groupe</th>
-                        <th>Note Disc.</th>
-                        <th>Absence?</th>
-                        <th>Action</th>
+                        <th>Scroll ID</th>
+                        <th>Family Name</th>
+                        <th>Given Name</th>
+                        <th>Guild</th>
+                        <th>Honor</th>
+                        <th>Absent?</th>
+                        <th>Record</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,7 +70,7 @@ function Stagiaires() {
                                 <input type="checkbox" checked={!!checked[s.cef]} onChange={() => toggle(s.cef)} />
                             </td>
                             <td>
-                                <button className="btn btn-sm btn-success" onClick={() => handleSaveAbsence(s)}>Save</button>
+                                <button className="btn btn-sm btn-success" onClick={() => handleSaveAbsence(s)}>Record</button>
                             </td>
                         </tr>
                     ))}
@@ -78,7 +78,7 @@ function Stagiaires() {
             </table>
 
             <div className="mt-3">
-                <h5>Absences récentes (tous groupes)</h5>
+                <h5>Recent Absences (All Guilds)</h5>
                 <ul>
                     {absences.slice().reverse().slice(0, 5).map(a => (
                         <li key={a.id}>{a.date} — {a.cef} ({a.groupe})</li>
