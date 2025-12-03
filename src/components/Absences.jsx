@@ -8,17 +8,15 @@ function Absences() {
     const stagiaires = useSelector(state => state.stagiaires.list);
     const dispatch = useDispatch();
 
-    const groupes = React.useMemo(() => distinctGroups(stagiaires), [stagiaires]);
+    const groupes = distinctGroups(stagiaires);
 
     const onSelectGroup = (e) => {
         dispatch(setFilterGroupeAbs(e.target.value));
         dispatch(setFilterGroupe(e.target.value));
     };
 
-    const filtered = React.useMemo(() => {
-        const list = filter === 'ALL' ? absences : absences.filter(a => a.groupe === filter);
-        return list.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
-    }, [absences, filter]);
+    const list = filter === 'ALL' ? absences : absences.filter(a => a.groupe === filter);
+    const filtered = list.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
 
     return (
         <div className="container">

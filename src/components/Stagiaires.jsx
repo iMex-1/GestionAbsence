@@ -10,16 +10,14 @@ function Stagiaires() {
 
     const [checked, setChecked] = React.useState({});
 
-    const groupes = React.useMemo(() => distinctGroups(stagiaires), [stagiaires]);
+    const groupes = distinctGroups(stagiaires);
 
     const onSelectGroup = (e) => {
         dispatch(setFilterGroupe(e.target.value));
         dispatch(setFilterGroupeAbs(e.target.value));
     };
 
-    const filtered = React.useMemo(() => {
-        return filter === 'ALL' ? stagiaires : stagiaires.filter(s => s.groupe === filter);
-    }, [stagiaires, filter]);
+    const filtered = filter === 'ALL' ? stagiaires : stagiaires.filter(s => s.groupe === filter);
 
     const toggle = (cef) => {
         setChecked(prev => ({ ...prev, [cef]: !prev[cef] }));
