@@ -49,11 +49,11 @@ function Stagiaires() {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th>Matricula</th>
-                        <th>Cognomen</th>
-                        <th>Praenomen</th>
+                        <th>Matricul</th>
+                        <th>nom</th>
+                        <th>Prenom</th>
                         <th>Faculty</th>
-                        <th>Disciplina</th>
+                        <th>Discipline</th>
                         <th>Absent?</th>
                         <th>Action</th>
                     </tr>
