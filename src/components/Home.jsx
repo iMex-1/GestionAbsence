@@ -1,9 +1,9 @@
 function Home() {
     return (
         <div className="container">
-            <h1>Welcome to the Guild</h1>
-            <p>Hark! Thou hast entered the sacred halls of the Apprentices' Guild. Here ye shall manage the records of our noble trainees and track their attendance with the wisdom of the ancients.</p>
-            <p>May thy quill be swift and thy parchment ever ready!</p>
+            <h1>Universitas Scholarium</h1>
+            <p>Welcome to the venerable halls of learning, where knowledge is preserved in perpetuity upon these sacred scrolls. Within these archives, the records of our distinguished scholars are maintained with the utmost care and precision, as befits an institution of higher learning.</p>
+            <p>This registry serves to chronicle the attendance and academic standing of all matriculated students, ensuring the integrity of our scholastic traditions for generations hence.</p>
         </div>
     );
 }

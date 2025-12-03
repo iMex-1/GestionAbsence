@@ -35,12 +35,12 @@ function Stagiaires() {
 
     return (
         <div className="container">
-            <h2>Guild Apprentices Registry</h2>
+            <h2>Matriculation Registry</h2>
             <div className="mb-3 row">
-                <label className="col-sm-2 col-form-label">Filter by Guild</label>
+                <label className="col-sm-2 col-form-label">Filter by Faculty</label>
                 <div className="col-sm-4">
                     <select className="form-select" value={filter} onChange={onSelectGroup}>
-                        <option value="ALL">All Guilds</option>
+                        <option value="ALL">All Faculties</option>
                         {groupes.map(g => <option key={g} value={g}>{g}</option>)}
                     </select>
                 </div>
@@ -49,13 +49,13 @@ function Stagiaires() {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th>Scroll ID</th>
-                        <th>Family Name</th>
-                        <th>Given Name</th>
-                        <th>Guild</th>
-                        <th>Honor</th>
+                        <th>Matricula</th>
+                        <th>Cognomen</th>
+                        <th>Praenomen</th>
+                        <th>Faculty</th>
+                        <th>Disciplina</th>
                         <th>Absent?</th>
-                        <th>Record</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -78,7 +78,7 @@ function Stagiaires() {
             </table>
 
             <div className="mt-3">
-                <h5>Recent Absences (All Guilds)</h5>
+                <h5>Recent Absences (All Faculties)</h5>
                 <ul>
                     {absences.slice().reverse().slice(0, 5).map(a => (
                         <li key={a.id}>{a.date} — {a.cef} ({a.groupe})</li>
