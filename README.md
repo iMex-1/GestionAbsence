@@ -1,16 +1,92 @@
-# React + Vite
+# React Redux Stagiaires App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application for managing trainees (stagiaires) and their absences, built with Redux Toolkit for state management.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Stagiaires Management**: View and manage trainee information
+- **Absence Tracking**: Record and track absences with automatic discipline note updates
+- **Group Filtering**: Filter trainees and absences by group
+- **Discipline Notes**: Automatic decrement of discipline notes when absences are recorded
+- **Responsive UI**: Built with Bootstrap for a clean, responsive interface
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** - UI library
+- **Redux Toolkit** - State management
+- **React Router** - Navigation and routing
+- **Bootstrap** - Styling and responsive design
+- **Vite** - Build tool and dev server
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+## Running the Application
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:5173`
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── Navbar.jsx       # Navigation bar
+│   ├── Home.jsx         # Home page
+│   ├── Stagiaires.jsx   # Trainees list and management
+│   └── Absences.jsx     # Absences list
+├── store.js             # Redux store and slices
+├── App.jsx              # Main app component
+└── main.jsx             # Entry point
+```
+
+## Redux Store
+
+The application uses two Redux slices:
+
+### stagiaireSlice
+- Manages trainee data
+- Handles group filtering
+- Updates discipline notes
+
+### absenceSlice
+- Manages absence records
+- Handles group filtering for absences
+- Adds new absence entries
+
+## Code Quality Analysis
+
+This project is configured for code quality analysis with SonarQube. For detailed setup instructions, see [SONARQUBE_SETUP.md](./SONARQUBE_SETUP.md).
+
+### Quick SonarQube Scan
+
+If SonarQube is already set up:
+
+```bash
+npx sonar-scanner
+```
+
+View results at: `http://localhost:9000/dashboard?id=GestionAbs`
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npx sonar-scanner` - Run SonarQube analysis
+
+## License
+
+MIT
