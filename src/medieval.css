@@ -89,7 +89,7 @@ body::before {
 
 /* Academic Medieval Navbar */
 .medieval-navbar {
-  background: linear-gradient(180deg, var(--university-burgundy) 0%, #4a1628 100%);
+  background: linear-gradient(180deg, #1a0d14 0%, #2d1620 100%);
   border-bottom: 3px solid var(--academic-gold);
   box-shadow: 
     0 4px 12px rgba(0,0,0,0.6),
@@ -102,7 +102,7 @@ body::before {
   font-family: 'Cinzel', serif;
   font-size: 1.75rem;
   color: var(--academic-gold) !important;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
   letter-spacing: 3px;
   font-weight: 600;
   position: relative;
@@ -115,24 +115,31 @@ body::before {
   left: 0;
   font-size: 1.5rem;
   color: var(--academic-gold);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
 }
 
 .medieval-navbar .nav-link {
   font-family: 'EB Garamond', serif;
-  color: var(--vellum) !important;
-  font-weight: 500;
+  color: #f5f0e3 !important;
+  font-weight: 600;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
   padding: 0.5rem 1.25rem !important;
   transition: all 0.3s ease;
   border-bottom: 2px solid transparent;
   margin: 0 0.5rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .medieval-navbar .nav-link:hover {
   color: var(--academic-gold) !important;
   border-bottom: 2px solid var(--academic-gold);
-  background: rgba(201, 169, 97, 0.08);
+  background: rgba(201, 169, 97, 0.15);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+}
+
+.medieval-navbar .navbar-toggler-icon {
+  filter: brightness(1.5);
 }
 
 /* Headings - Illuminated Manuscript Style */
